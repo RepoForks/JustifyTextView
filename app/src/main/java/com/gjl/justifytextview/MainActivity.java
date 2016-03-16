@@ -1,5 +1,6 @@
 package com.gjl.justifytextview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import com.gjl.justifytextview.activity.DataBindingActivity;
+import com.gjl.justifytextview.activity.EventbusActivity;
+import com.gjl.justifytextview.activity.JustifyTextViewActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button mJustifyTextviewButton;
+    private Button mEventBusButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +27,33 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        mJustifyTextviewButton = (Button) findViewById(R.id.btn_justify_textview);
+        mJustifyTextviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, JustifyTextViewActivity.class);
+                startActivity(intent);
             }
         });
+        mEventBusButton = (Button) findViewById(R.id.btn_event_bus);
+        mEventBusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EventbusActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_databinding).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DataBindingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

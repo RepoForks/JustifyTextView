@@ -13,52 +13,24 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_justify_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="normal:" />
-
-    <TextView
-        android:id="@+id/normal_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#ffffff"
-        android:text="@string/text"
-        android:textColor="#ec3e3e"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="justify:" />
-
-    <com.gjl.library.JustifyTextView
-        android:id="@+id/justfy_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#ffffff"
-        android:text="@string/text"
-        android:textSize="20sp"
-        app:text_color="#ec3e3e" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="#ffffff"
-        android:gravity="left|top"
-        android:hint="@string/input_hint"
-        android:minHeight="100dp"
-        android:padding="5dp" />
+        android:text="justify textview" />
 
     <Button
-        android:id="@+id/ok"
+        android:id="@+id/btn_event_bus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="ok" />
+        android:text="event bus" />
+
+    <Button
+        android:id="@+id/btn_databinding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="data_binding" />
+
 </LinearLayout>
