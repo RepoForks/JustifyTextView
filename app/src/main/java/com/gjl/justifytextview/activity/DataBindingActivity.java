@@ -17,13 +17,15 @@ import com.gjl.justifytextview.databinding.ActivityDatabindingBinding;
 public class DataBindingActivity extends AppCompatActivity implements View.OnClickListener {
 
 
+    private User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
         ActivityDatabindingBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_databinding);
-        User user = new User();
+        user = new User();
         user.setName("demo");
         user.setAge(18);
         user.setGender(1);
@@ -37,7 +39,11 @@ public class DataBindingActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
 
         switch (v.getId()) {
+            case R.id.tv_age:
 
+                user.setAge(user.getAge() + 1);
+
+                break;
 
             default:
                 if (v instanceof TextView) {
